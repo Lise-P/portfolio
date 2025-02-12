@@ -1,0 +1,170 @@
+.header {
+  font-family: "Heebo", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: normal;
+  background-color: #142850;
+  color: white;
+  padding: 3em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Cache le titre en mobile */
+.title_header {
+  display: none;
+}
+
+/* Toggle checkbox pour activer/désactiver le menu */
+#toggle {
+  display: none;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  position: absolute;
+  top: 1.5em;
+  right: 5%;
+  width: 3em;
+  height: 45px;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.hamburger div {
+  position: relative;
+  width: 3em;
+  height: 7px;
+  border-radius: 3px;
+  background-color: white;
+  margin-top: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Menu en overlay */
+.nav {
+  position: fixed;
+  width: 100%;
+  height: 33vh; /* Seulement un tiers de la hauteur */
+  background-color: #142850;
+  top: -100%; /* Caché par défaut */
+  left: 0;
+  right: 0;
+  bottom: auto;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  transform: scale(0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Centrage des liens dans le menu */
+.nav-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 2em;
+  display: inline-block;
+  margin-top: 1.25em;
+  transition: color 0.2s ease-in-out;
+  letter-spacing: 1px;
+}
+
+nav a:before {
+  content: "";
+  height: 0;
+  position: absolute;
+  width: 0.25em;
+  background-color: white;
+  left: -0.5em;
+  transition: all 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: white;
+}
+
+nav a:hover:before {
+  height: 100%;
+}
+
+/* Animations */
+#toggle:checked + .hamburger .top-bun {
+  transform: rotate(-45deg);
+  margin-top: 25px;
+}
+
+#toggle:checked + .hamburger .bottom-bun {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+
+#toggle:checked + .hamburger .meat {
+  transform: rotate(45deg);
+  margin-top: -7px;
+}
+
+#toggle:checked + .hamburger + .nav {
+  top: 0;
+  transform: scale(1);
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding-bottom: 3.5em;
+  }
+
+  .title_header {
+    display: flex;
+    justify-content: flex-end; /* Garde les éléments alignés à droite */
+    width: 100%;
+    gap: 1.5em;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Centrer verticalement */
+    font-size: 0.8em; /* Plus petit font-size */
+    padding-right: 3em;
+  }
+
+  .title_header span {
+    position: relative; /* Nécessaire pour l'élément ::after */
+    cursor: pointer; /* Ajoute un curseur pour l'interaction */
+  }
+
+  .title_header span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0); /* Masqué par défaut */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .title_header span:hover::after {
+    transform: scaleX(1); /* Affiche l'underline au hover */
+  }
+
+  /* Supprime le menu burger */
+  .hamburger,
+  .nav {
+    display: none;
+  }
+  nav a {
+    margin-top: 0.25em;
+  }
+}
