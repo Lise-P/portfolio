@@ -3,6 +3,7 @@ import photoLise from "../assets/images/photo_lise.jpg";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import "../styles/Home.css";
+import { Link } from "react-router-dom";
 interface Poste {
   id: number;
   titre: string;
@@ -102,14 +103,19 @@ function Home() {
           <div className="cards_xp">
             {postes.length > 0 ? (
               postes.map((poste) => (
-                <figure key={poste.id} className="experience-card">
-                  <h3>{poste.titre}</h3>
-                  <p>
-                    <strong>Durée :</strong> {poste.duree}
-                  </p>
-                  <p>
-                    <strong>Résumé :</strong> {poste.resume}
-                  </p>
+                <figure className="experience-card" key={poste.id}>
+                  <Link
+                    to={`/experience/${poste.id}`}
+                    className="experience-link"
+                  >
+                    <h3>{poste.titre}</h3>
+                    <p>
+                      <strong>Durée :</strong> {poste.duree}
+                    </p>
+                    <p>
+                      <strong>Résumé :</strong> {poste.resume}
+                    </p>
+                  </Link>
                 </figure>
               ))
             ) : (

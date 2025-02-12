@@ -3,7 +3,12 @@ h2 {
   padding-top: 0.5em;
   font-size: 2em;
 }
-
+.experience-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Permet de garder la structure des figures */
+  width: 100%;
+}
 img {
   border-radius: 50%;
   object-fit: cover;
@@ -44,11 +49,11 @@ img {
   margin-bottom: 1.5em;
 }
 
-.form-group label {
+.experience-form .form-group label {
   display: block;
   font-size: 1.1em;
   margin-bottom: 0.5em;
-  color: #333;
+  color: black;
 }
 
 .form-group input {
@@ -121,7 +126,7 @@ figure {
 
 .cards_xp {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   gap: 1em;
 }
@@ -182,7 +187,7 @@ figure {
     width: 80%;
   }
   .experience-card {
-    width: 45%;
+    width: calc(50% - 1.5rem);
   }
 
   .cards_xp {
@@ -211,7 +216,7 @@ figure {
     padding-left: 0.5em;
   }
   .experience-card {
-    width: 30%;
+    width: calc(33.333% - 1.5rem);
   }
 
   .technos {
