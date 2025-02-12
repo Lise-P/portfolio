@@ -12,12 +12,16 @@ interface Poste {
 }
 
 function Home() {
-  const [postes, setPostes] = useState<Poste[]>([]); // Stocker les postes
-  const [loading, setLoading] = useState(true); // Indicateur de chargement
-  const [error, setError] = useState<string | null>(null); // Stocker une erreur éventuelle
+  const [postes, setPostes] = useState<Poste[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const [titre, setTitre] = useState("");
+  const [duree, setDuree] = useState("");
+  const [resume, setResume] = useState("");
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/postes`) // Modifier selon ton backend
+    fetch(`${import.meta.env.VITE_API_URL}/api/postes`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Erreur serveur : ${response.status}`);
@@ -33,6 +37,41 @@ function Home() {
         setLoading(false);
       });
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault(); // Empêcher le rechargement de la page
+
+    const newPoste = { titre, duree, resume };
+
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/postes`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newPoste), // Envoyer les données du formulaire en JSON
+        },
+      );
+
+      if (response.ok) {
+        // Après l'ajout, on recharge la liste des postes via une requête GET
+        const updatedPostes = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/postes`,
+        );
+        const data = await updatedPostes.json();
+        setPostes(data); // Met à jour l'état avec les données actuelles
+        setTitre(""); // Réinitialiser les champs du formulaire
+        setDuree("");
+        setResume("");
+      } else {
+        setError("Erreur lors de l'ajout du poste.");
+      }
+    } catch (error) {
+      setError("Erreur réseau ou serveur.");
+    }
+  };
 
   if (loading) {
     return <p>⏳ Chargement des postes...</p>;
@@ -63,13 +102,15 @@ function Home() {
         <div className="separator" />
         <section>
           <h2>Expériences.</h2>
-          <form className="experience-form">
+          <form className="experience-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="title">Titre</label>
               <input
                 type="text"
                 id="title"
                 placeholder="Entrez le titre de votre expérience"
+                value={titre}
+                onChange={(e) => setTitre(e.target.value)}
                 required
               />
             </div>
@@ -80,6 +121,8 @@ function Home() {
                 type="text"
                 id="duration"
                 placeholder="Entrez la durée de l'expérience"
+                value={duree}
+                onChange={(e) => setDuree(e.target.value)}
                 required
               />
             </div>
@@ -89,6 +132,8 @@ function Home() {
               <input
                 id="summary"
                 placeholder="Entrez le résumé de votre expérience"
+                value={resume}
+                onChange={(e) => setResume(e.target.value)}
                 required
               />
             </div>

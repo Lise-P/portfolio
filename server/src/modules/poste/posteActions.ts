@@ -58,4 +58,4 @@ const add: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { browse, read };
+export default { browse, read, add };

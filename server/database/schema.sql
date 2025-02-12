@@ -16,7 +16,7 @@ id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
 titre VARCHAR(255) NOT NULL,
 duree VARCHAR(255) NOT NULL,
 resume VARCHAR(255) NOT NULL,
-  user_id int unsigned not null,
+  user_id int unsigned null,
   foreign key(user_id) references user(id)
 );
 

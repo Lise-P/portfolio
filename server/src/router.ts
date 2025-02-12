@@ -16,7 +16,7 @@ router.post("/api/items", itemActions.add);
 
 router.get("/api/postes", posteActions.browse);
 router.get("/api/postes/:id", posteActions.read);
-// router.post("/api/items", itemActions.add);
+router.post("/api/postes", posteActions.add);
 
 /* ************************************************************************* */
 
