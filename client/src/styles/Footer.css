@@ -1,5 +1,5 @@
 .footer {
-  background-color: #142850; /* Le même bleu que le header */
+  background-color: #142850;
   padding: 1em 0;
   text-align: center;
   color: white;
@@ -16,14 +16,14 @@
 }
 
 .footer .logos img {
-  width: 2em; /* Ajuste la taille du logo */
+  width: 2em;
   height: auto;
-  filter: invert(1); /* Inverse la couleur du logo, transforme en blanc s'il est noir */
+  filter: invert(1);
   transition: filter 0.3s ease-in-out;
 }
 
 .footer .logos img:hover {
-  filter: invert(0); /* Annule l'inversion lors du hover */
+  filter: invert(0);
 }
 
 .footer .copyright {
