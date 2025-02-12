@@ -1,6 +1,5 @@
-/* Container principal de la page */
 .experience-page {
-  background-color: #f4f4f4; /* Couleur douce de fond */
+  background-color: #f4f4f4;
   padding: 2em;
   display: flex;
   flex-direction: column;
@@ -14,10 +13,9 @@
   justify-content: center;
 }
 
-/* Style du titre principal */
 .page-title {
   font-size: 2.5em;
-  color: #142850; /* Bleu nuit */
+  color: #142850;
   text-align: center;
   margin-bottom: 1.5em;
   text-transform: uppercase;
@@ -26,7 +24,6 @@
   font-family: "Heebo", serif;
 }
 
-/* Conteneur des détails de l'expérience */
 .experience-details {
   background-color: white;
   width: 80%;
@@ -39,10 +36,9 @@
 }
 
 .experience-details:hover {
-  background-color: #edf7fa; /* Fond clair au survol */
+  background-color: #edf7fa;
 }
 
-/* Titre de l'expérience */
 .experience-details h2 {
   font-size: 2em;
   color: #142850;
@@ -52,7 +48,6 @@
   text-align: center;
 }
 
-/* Durée de l'expérience */
 .experience-duration {
   font-size: 1.1em;
   color: #333;
@@ -60,7 +55,6 @@
   font-family: "Heebo", serif;
 }
 
-/* Résumé de l'expérience */
 .experience-summary {
   font-size: 1.1em;
   color: #333;
@@ -69,7 +63,6 @@
   text-align: justify;
 }
 
-/* Footer */
 footer {
   background-color: #142850;
   color: white;
@@ -87,5 +80,5 @@ footer a {
 }
 
 footer a:hover {
-  color: #27496d; /* Surlignage au survol */
+  color: #27496d;
 }

@@ -6,7 +6,7 @@ h2 {
 .experience-link {
   text-decoration: none;
   color: inherit;
-  display: block; /* Permet de garder la structure des figures */
+  display: block;
   width: 100%;
 }
 img {
@@ -28,10 +28,10 @@ img {
   font-size: 1.1em;
 }
 .separator {
-  width: 90%; /* La barre prend 90% de la largeur de l'écran */
-  height: 1px; /* Épaisseur de la barre */
-  background-color: rgba(198, 174, 174, 0.79); /* Couleur grise */
-  margin: 2em auto; /* Marge auto pour centrer horizontalement, ajuster la marge selon ton besoin */
+  width: 90%;
+  height: 1px;
+  background-color: rgba(198, 174, 174, 0.79);
+  margin: 2em auto;
 }
 
 .experience-form {
@@ -67,7 +67,7 @@ img {
 .submit-btn {
   width: 70%;
   padding: 0.35em;
-  background-color: #142850; /* Bleu nuit */
+  background-color: #142850;
   color: white;
   border: none;
   border-radius: 30px;
@@ -78,7 +78,7 @@ img {
 }
 
 .submit-btn:hover {
-  background-color: #27496d; /* Changement de couleur au hover */
+  background-color: #27496d;
 }
 
 figure {
@@ -134,7 +134,7 @@ figure {
 .technos {
   width: 55%;
   padding: 0.35em;
-  background-color: #142850; /* Bleu nuit */
+  background-color: #142850;
   color: white;
   border: none;
   border-radius: 30px;
@@ -161,12 +161,10 @@ figure {
     transition: background-color 0.3s ease; /* Transition fluide */
   }
 
-  /* Effet au survol de la section */
   section:hover {
-    background-color: #edf7fa; /* Bleu pastel */
+    background-color: #edf7fa;
   }
 
-  /* Optionnel : Assurer une bonne visibilité du texte */
   section p,
   section img,
   section div {
@@ -175,7 +173,7 @@ figure {
 
   section:hover img,
   section:hover div {
-    color: #333; /* Change la couleur du texte pour plus de contraste sur fond pastel */
+    color: #333;
   }
   .submit-btn {
     margin-left: 4em;
@@ -192,6 +190,7 @@ figure {
 
   .cards_xp {
     flex-direction: row;
+    flex-wrap: wrap;
   }
   .technos {
     width: 32%;
