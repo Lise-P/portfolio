@@ -1,0 +1,220 @@
+h2 {
+  padding-left: 0.5em;
+  padding-top: 0.5em;
+  font-size: 2em;
+}
+
+img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 13em;
+  height: 13em;
+}
+.about_container {
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: justify;
+  align-items: center;
+  gap: 1em;
+}
+
+.text_about {
+  padding: 1em;
+  font-size: 1.1em;
+}
+.separator {
+  width: 90%; /* La barre prend 90% de la largeur de l'écran */
+  height: 1px; /* Épaisseur de la barre */
+  background-color: rgba(198, 174, 174, 0.79); /* Couleur grise */
+  margin: 2em auto; /* Marge auto pour centrer horizontalement, ajuster la marge selon ton besoin */
+}
+
+.experience-form {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  align-items: flex-start;
+}
+
+.form-group {
+  margin-bottom: 1.5em;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-btn {
+  width: 70%;
+  padding: 0.35em;
+  background-color: #142850; /* Bleu nuit */
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 2em;
+}
+
+.submit-btn:hover {
+  background-color: #27496d; /* Changement de couleur au hover */
+}
+
+figure {
+  margin: 0 auto;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  align-items: flex-start;
+  margin: 1em;
+  width: 80%;
+}
+
+.cards_xp {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.experience-card {
+  width: 80%;
+  max-width: 600px;
+  margin: 1.5em auto;
+  padding: 1.5em;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.experience-card h3 {
+  font-size: 1.5em;
+  padding-bottom: 0.5em;
+}
+
+.experience-card p {
+  font-size: 1.1em;
+  padding: 0.5em 0;
+}
+
+.experience-card strong {
+  font-weight: bold;
+}
+
+.cards_xp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+}
+
+.technos {
+  width: 55%;
+  padding: 0.35em;
+  background-color: #142850; /* Bleu nuit */
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 0.90em;
+  text-align: center;
+  padding-left: 1em;
+}
+
+.projets {
+  margin-left: 1em;
+  margin-bottom: 1em;
+  margin-top: 0.7em;
+}
+
+@media (min-width: 768px) {
+  .about_container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  section {
+    background-color: white;
+    padding: 2em;
+    transition: background-color 0.3s ease; /* Transition fluide */
+  }
+
+  /* Effet au survol de la section */
+  section:hover {
+    background-color: #edf7fa; /* Bleu pastel */
+  }
+
+  /* Optionnel : Assurer une bonne visibilité du texte */
+  section p,
+  section img,
+  section div {
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  section:hover img,
+  section:hover div {
+    color: #333; /* Change la couleur du texte pour plus de contraste sur fond pastel */
+  }
+  .submit-btn {
+    margin-left: 4em;
+  }
+
+  figure {
+    padding: 2em;
+    margin: 1em;
+    width: 80%;
+  }
+  .experience-card {
+    width: 45%;
+  }
+
+  .cards_xp {
+    flex-direction: row;
+  }
+  .technos {
+    width: 32%;
+  }
+}
+
+@media (min-width: 1025px) {
+  img {
+    width: 18em;
+    height: 18em;
+    margin-right: 5em;
+  }
+
+  .text_about {
+    padding: 1em;
+    font-size: 1.4em;
+    padding-right: 2em;
+  }
+
+  h2 {
+    font-size: 3em;
+    padding-left: 0.5em;
+  }
+  .experience-card {
+    width: 30%;
+  }
+
+  .technos {
+    width: 16%;
+  }
+}
