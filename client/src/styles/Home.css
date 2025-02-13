@@ -41,10 +41,36 @@ nav ul li a.active {
 }
 
 h2 {
-  padding-left: 0.5em;
-  padding-top: 0.5em;
-  font-size: 2em;
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  color: #333; /* Couleur du texte par défaut */
+  padding-left: 1rem;
+  transition: color 0.3s ease;
 }
+
+h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  border-left: 3px solid #1abc9c; /* Couleur du cadre (vert doux) */
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease;
+}
+
+h2:hover {
+  color: #1abc9c; /* Couleur du texte pendant le survol */
+}
+
+h2:hover::before {
+  transform: scaleY(1); /* Fait apparaître le cadre lors du survol */
+}
+
 .experience-link {
   text-decoration: none;
   color: inherit;

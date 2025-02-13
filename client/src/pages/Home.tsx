@@ -156,10 +156,12 @@ function Home() {
             </li>
           </ul>
         </nav>
+        <div className="separator" />
         <section id="about">
           <h2>À propos. </h2>
           <div className="about_container">
             <p className="text_about">
+              <strong>Lise Pérard - Développeuse web Full stack.</strong> <br />
               En reconversion dans le développement web, j’ajoute une expertise
               technique à mes compétences en accompagnement et coordination pour
               concevoir des solutions numériques adaptées aux besoins des
@@ -172,7 +174,7 @@ function Home() {
         </section>
         <div className="separator" />
         <section id="experiences">
-          <h2>Expériences.</h2>
+          <h2>Ajouter une expérience.</h2>
           <form className="experience-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="title">Titre</label>
@@ -216,6 +218,7 @@ function Home() {
         </section>
         <div className="separator" />
         <section id="figure_xp">
+          <h2>Liste des expériences.</h2>
           <div className="cards_xp">
             {postes.length > 0 ? (
               postes.map((poste) => (
