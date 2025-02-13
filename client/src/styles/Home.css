@@ -86,6 +86,12 @@ img {
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+#navigLogo {
+  text-align: left;
+  width: 5em;
+  height: 5em;
+  box-shadow: none;
+}
 img:hover {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
@@ -234,6 +240,7 @@ figure {
   margin-left: 1em;
   margin-bottom: 1em;
   margin-top: 0.7em;
+  margin-right: 1em;
   padding: 1.2em;
   background-color: #f4f4f4;
   border-radius: 8px;
@@ -273,6 +280,20 @@ figure {
 }
 
 @media (min-width: 768px) {
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .nav2 img {
+    text-align: left;
+  }
+
+  .nav2 {
+    display: flex;
+    align-items: center;
+  }
   .about_container {
     display: flex;
     flex-direction: row;
@@ -321,6 +342,19 @@ figure {
 }
 
 @media (min-width: 1025px) {
+  .nav2 {
+    justify-content: center;
+  }
+
+  ul {
+    margin: 0;
+  }
+  #navigLogo {
+    margin-right: 0;
+    width: 9em;
+    height: 100%;
+    object-fit: cover;
+  }
   img {
     width: 18em;
     height: 18em;
