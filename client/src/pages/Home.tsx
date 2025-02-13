@@ -20,6 +20,42 @@ function Home() {
   const [duree, setDuree] = useState("");
   const [resume, setResume] = useState("");
 
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      let currentSection = "";
+
+      // biome-ignore lint/complexity/noForEach: <explanation>
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100;
+        if (window.scrollY >= sectionTop) {
+          currentSection = section.getAttribute("id") || "";
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/postes`)
       .then((response) => {
@@ -39,7 +75,7 @@ function Home() {
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault(); // Empêcher le rechargement de la page
+    e.preventDefault();
 
     const newPoste = { titre, duree, resume };
 
@@ -51,18 +87,17 @@ function Home() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(newPoste), // Envoyer les données du formulaire en JSON
+          body: JSON.stringify(newPoste),
         },
       );
 
       if (response.ok) {
-        // Après l'ajout, on recharge la liste des postes via une requête GET
         const updatedPostes = await fetch(
           `${import.meta.env.VITE_API_URL}/api/postes`,
         );
         const data = await updatedPostes.json();
-        setPostes(data); // Met à jour l'état avec les données actuelles
-        setTitre(""); // Réinitialiser les champs du formulaire
+        setPostes(data);
+        setTitre("");
         setDuree("");
         setResume("");
       } else {
@@ -85,7 +120,43 @@ function Home() {
     <>
       <Header />
       <main>
-        <section>
+        <nav>
+          <ul>
+            <li>
+              <a
+                href="#about"
+                className={activeSection === "about" ? "active" : ""}
+              >
+                À propos.
+              </a>
+            </li>
+            <li>
+              <a
+                href="#experiences"
+                className={activeSection === "experiences" ? "active" : ""}
+              >
+                Expériences.
+              </a>
+            </li>
+            <li>
+              <a
+                href="#figure_xp"
+                className={activeSection === "figure_xp" ? "active" : ""}
+              >
+                Liste expériences.
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projets"
+                className={activeSection === "projets" ? "active" : ""}
+              >
+                Projets.
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <section id="about">
           <h2>À propos. </h2>
           <div className="about_container">
             <p className="text_about">
@@ -100,7 +171,7 @@ function Home() {
           </div>
         </section>
         <div className="separator" />
-        <section>
+        <section id="experiences">
           <h2>Expériences.</h2>
           <form className="experience-form" onSubmit={handleSubmit}>
             <div className="form-group">
@@ -144,7 +215,7 @@ function Home() {
           </form>
         </section>
         <div className="separator" />
-        <section>
+        <section id="figure_xp">
           <div className="cards_xp">
             {postes.length > 0 ? (
               postes.map((poste) => (
@@ -169,7 +240,7 @@ function Home() {
           </div>
         </section>
         <div className="separator" />
-        <section>
+        <section id="projets">
           <h2>Projets.</h2>
           <div className="projets">
             <h3>Street Art Hunters</h3>
@@ -205,7 +276,36 @@ function Home() {
               événements autour du bloc.
             </p>
           </div>
+
+          <div className="projets">
+            <h3>Périlovers</h3>
+            <p className="technos">#HTML #CSS #React #NodeJS</p>
+            <p>
+              Site de rencontre pour les amoureux du Périgore - design années
+              2000. Envie de (re)découvrir cette magnifique région ? Alors
+              Périlovers a ce qu'il vous faut ! Retrouvez plein d'événements et
+              des gens avec qui dialoguer pour aller au musée de la charantaise
+              ensemble.
+            </p>
+          </div>
+          <div className="projets">
+            <h3>LABS society</h3>
+            <p className="technos">#HTML #CSS</p>
+            <p>
+              Site vitrine d’une agence web « LABS society ». Découvrez l'équipe
+              pour votre projet web, faites connaissance avec Angélica, Bastien,
+              Lise, Michael et Sébastien. Il y a même des fun facts !
+            </p>
+          </div>
         </section>
+        <button
+          type="button"
+          id="scrollTop"
+          className={showScrollTop ? "show" : ""}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          ⬆️
+        </button>
       </main>
 
       <Footer />
