@@ -56,6 +56,24 @@ const add: RequestHandler = async (req, res, next) => {
     // Pass any errors to the error-handling middleware
     next(err);
   }
-};
+}
+  const destroy: RequestHandler = async (req, res, next) => {
+    try {
+      // Delete a specific category based on the provided ID
 
-export default { browse, read, add };
+      const posteId = Number(req.params.id);
+
+      await posteRepository.delete(posteId);
+
+      // Respond with HTTP 204 (No Content) anyway
+
+      res.sendStatus(204);
+    } catch (err) {
+      // Pass any errors to the error-handling middleware
+
+      next(err);
+    }
+  };
+
+
+export default { browse, read, add, destroy };
