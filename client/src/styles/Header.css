@@ -5,13 +5,25 @@
   font-weight: normal;
   background-color: #142850;
   color: white;
-  padding: 3em;
+  padding: 1.5em;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   position: relative;
 }
 
+#logo_lise {
+  width: 5em;
+  height: 5em;
+  margin-left: 2em;
+}
+
+/* Phrase d'accroche cachée par défaut (mobile) */
+.header-tagline {
+  display: none; /* Cacher sur mobile par défaut */
+}
+
+/* Liens cachés aussi par défaut */
 .title_header {
   display: none;
 }
@@ -114,16 +126,50 @@ nav a:hover:before {
   transform: scale(1);
 }
 
+/* Réglages pour la phrase d'accroche et menu */
 @media (min-width: 768px) {
-  .header {
-    padding-bottom: 3.5em;
+  /* Afficher la phrase d'accroche à partir de 768px */
+  .header-tagline {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.6rem;
+    color: white;
+    text-align: center;
+    margin: 10px auto; /* Centrer horizontalement */
+    font-weight: 500;
+    transition: transform 0.3s ease-in-out, color 0.3s ease;
+    display: block; /* Afficher la phrase d'accroche sur desktop */
+    margin-right: 12em;
+  }
+
+  .header-tagline:hover {
+    color: #1abc9c; /* Changer la couleur au survol */
+    transform: scale(1.05); /* Ajouter un léger zoom au survol */
+  }
+
+  .header-tagline::after {
+    content: ""; /* Nécessaire pour créer la ligne */
+    position: absolute;
+    bottom: -5px; /* Placer la ligne juste en dessous du texte */
+    left: 0;
+    width: 100%;
+    height: 2px; /* Hauteur de la ligne */
+    background-color: #333; /* Couleur de la ligne (associée au texte) */
+  }
+
+  /* Cacher le menu burger pour les écrans plus grands */
+  .hamburger,
+  .nav {
+    display: none;
+  }
+
+  nav {
+    text-align: end;
   }
 
   .title_header {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
     width: 100%;
-    gap: 1.5em;
     position: absolute;
     right: 0;
     top: 50%;
@@ -135,6 +181,17 @@ nav a:hover:before {
   .title_header span {
     position: relative;
     cursor: pointer;
+    padding: 8px 15px;
+    background-color: transparent; /* Pas de fond, juste le texte */
+    color: white; /* Texte en blanc */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .title_header span:hover {
+    background-color: #1abc9c; /* Changement de fond au survol avec couleur vive */
+    color: white;
+    transform: scale(1.1); /* Effet de zoom au survol */
   }
 
   .title_header span::after {
@@ -152,12 +209,16 @@ nav a:hover:before {
   .title_header span:hover::after {
     transform: scaleX(1);
   }
+}
 
-  .hamburger,
-  .nav {
-    display: none;
+@media (min-width: 1025px) {
+  .header-tagline {
+    margin-right: 25em;
   }
-  nav a {
-    margin-top: 0.25em;
+  .title_header {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5em;
   }
 }
