@@ -109,6 +109,25 @@ function Home() {
       setError("Erreur réseau ou serveur.");
     }
   };
+  const handleDelete = async (id: number) => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/postes/${id}`,
+        {
+          method: "DELETE",
+        },
+      );
+
+      if (response.ok) {
+        // Mise à jour de l'état en filtrant l'expérience supprimée
+        setPostes(postes.filter((poste) => poste.id !== id));
+      } else {
+        setError("Erreur lors de la suppression.");
+      }
+    } catch (error) {
+      setError("Erreur réseau ou serveur.");
+    }
+  };
 
   if (loading) {
     return <p>⏳ Chargement des postes...</p>;
@@ -238,6 +257,13 @@ function Home() {
                       <strong>Résumé :</strong> {poste.resume}
                     </p>
                   </Link>
+                  <button
+                    type="button"
+                    className="delete-btn"
+                    onClick={() => handleDelete(poste.id)}
+                  >
+                    🗑️ Supprimer
+                  </button>
                 </figure>
               ))
             ) : (
