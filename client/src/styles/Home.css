@@ -80,8 +80,8 @@ h2:hover::before {
 img {
   border-radius: 50%;
   object-fit: cover;
-  width: 13em;
-  height: 13em;
+  width: 18em;
+  height: 18em;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -105,15 +105,65 @@ img:hover {
   gap: 1em;
 }
 
+.text_lise {
+  background-color: #1abc9c;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.styled-link {
+  text-decoration: none; /* Enlève le souligné par défaut */
+  color: #1abc9c; /* Couleur du texte */
+  font-weight: bold; /* Texte en gras */
+  font-size: 16px; /* Taille de la police */
+  border-radius: 5px; /* Coins arrondis */
+  position: relative; /* Pour positionner le pseudo-élément */
+  overflow: hidden; /* Nécessaire pour cacher la partie du surlignement qui dépasse */
+  font-size: 1.1em;
+}
+
+.styled-link::before {
+  content: ""; /* Crée un pseudo-élément avant le texte */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Le surlignement couvrira toute la largeur du lien */
+  height: 2px; /* Hauteur du surlignement */
+  background-color: #1abc9c; /* Couleur du surlignement */
+  transform: scaleX(0); /* On commence avec le surlignement "caché" */
+  transform-origin: bottom right; /* Point de départ du surlignement */
+  transition: transform 0.3s ease-out; /* Transition fluide pour l'animation */
+}
+
+.styled-link:hover::before {
+  transform: scaleX(1); /* Au survol, on "déploie" le surlignement */
+  transform-origin: bottom left; /* Le surlignement s'étend de gauche à droite */
+}
+
+.styled-link:hover {
+  color: #000000; /* Couleur du texte au survol */
+}
+
+#photo_lise {
+  border: 3px solid #41b3a3;
+}
 .text_about {
   padding: 1em;
-  font-size: 1.1em;
+  font-size: 0.9em;
 }
 .separator {
   width: 90%;
   height: 1px;
   background-color: rgba(198, 174, 174, 0.79);
   margin: 2em auto;
+}
+
+.xp_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
 }
 
 .experience-form {
@@ -233,6 +283,29 @@ figure {
   cursor: pointer;
   transition: background 0.3s ease-in-out;
 }
+.extrait_site {
+  border-radius: 0;
+  box-shadow: 0;
+  width: 18em;
+  height: auto;
+  border: 4px solid #41b3a3; /* Contour avec la couleur définie */
+  border-radius: 15px; /* Coins arrondis */
+  box-shadow: 0 0 15px rgba(65, 179, 163, 0.5); /* Ombre subtile autour de l'image */
+  padding: 5px; /* Un peu d'espace entre l'image et le contour */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animations au hover */
+}
+
+.extrait_site:hover {
+  transform: scale(1.05); /* Effet de zoom au survol */
+  box-shadow: 0 0 30px rgba(65, 179, 163, 0.7); /* Ombre plus forte au hover */
+}
+
+.projet_container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-content: center;
+  align-items: center;
+}
 
 .delete-btn:hover {
   background-color: #cc0000;
@@ -249,7 +322,15 @@ figure {
   text-align: center;
   padding-left: 1em;
 }
+.github-logo {
+  width: 40px; /* Taille du logo, ajustable */
+  height: auto; /* Garde les proportions de l'image */
+  transition: transform 0.3s ease; /* Animation au hover */
+}
 
+.github-logo:hover {
+  transform: scale(1.1); /* Agrandissement du logo au survol */
+}
 .projets {
   margin-left: 1em;
   margin-bottom: 1em;
@@ -337,11 +418,16 @@ figure {
     margin-left: 4em;
   }
 
+  .xp_container {
+    flex-direction: row-reverse;
+  }
+
   figure {
     padding: 2em;
     margin: 1em;
     width: 80%;
   }
+
   .experience-card {
     width: calc(50% - 1.5rem);
   }
@@ -354,7 +440,9 @@ figure {
     width: 32%;
   }
 }
-
+.projet_container {
+  flex-direction: row;
+}
 @media (min-width: 1025px) {
   .nav2 {
     justify-content: center;
@@ -385,11 +473,22 @@ figure {
     font-size: 3em;
     padding-left: 0.5em;
   }
+
+  .xp_container {
+    justify-content: space-between;
+  }
   .experience-card {
     width: calc(33.333% - 1.5rem);
   }
-
+  .experience-form {
+    margin: 1em;
+  }
   .technos {
     width: 16%;
+  }
+
+  .extrait_site {
+    width: 28em;
+    height: auto;
   }
 }
