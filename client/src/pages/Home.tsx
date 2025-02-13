@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import "../styles/Home.css";
 import { Link } from "react-router-dom";
+import navigLogo from "../assets/images/location.png";
+
 interface Poste {
   id: number;
   titre: string;
@@ -120,7 +122,8 @@ function Home() {
     <>
       <Header />
       <main>
-        <nav>
+        <nav className="nav2">
+          <img src={navigLogo} alt="navigation logo" id="navigLogo" />
           <ul>
             <li>
               <a

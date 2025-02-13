@@ -28,7 +28,7 @@ function Header() {
         {/* Menu qui prend un tiers de l'écran */}
         <div className="nav">
           <div className="nav-wrapper">
-            <nav>
+            <nav className="nav_header">
               <Link to="/">Home.</Link>
               <br />
               <Link to="/Login">Se connecter.</Link>
