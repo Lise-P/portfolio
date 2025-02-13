@@ -31,6 +31,6 @@ values
 
   insert into poste(titre, duree, resume, user_id)
 values
-  ("Chargée de projet", "octobre 2021-avril 2023", "j'ai accompagné des locataires", 1),
-  ("Chargée de mobilisation et de communication", "juillet 2020-juillet 2021", "j'ai accompagné des étudiants", 1);
+  ("Chargée de projet", "octobre 2021-avril 2023", "Accompagnement individuel et collectif du public sur des enjeux de consommation, de logement et de santé - gestion du site internet - gestion administrative, optimisation des outils et process", 1),
+  ("Chargée de mobilisation et de communication", "juillet 2020-juillet 2021", "Développement et mise en œuvre de la stratégie des campagnes de mobilisation de 500 bénévoles/an au sein d'établissements d'enseignement supérieur - Organisation d’événements, réunions d’informations - Management et formation de 6 volontaires", 1);
 
