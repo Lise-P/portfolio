@@ -51,12 +51,19 @@ class PosteRepository {
   //   ...
   // }
 
-  // The D of CRUD - Delete operation
-  // TODO: Implement the delete operation to remove an poste by its ID
+  async delete(id: number) {
+    // Execute the SQL DELETE query to delete an existing category from the "category" table
 
-  // async delete(id: number) {
-  //   ...
-  // }
+    const [result] = await databaseClient.query<Result>(
+      "delete from poste where id = ?",
+
+      [id],
+    );
+
+    // Return how many rows were affected
+
+    return result.affectedRows;
+  }
 }
 
 export default new PosteRepository();
