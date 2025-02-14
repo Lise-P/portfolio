@@ -161,6 +161,14 @@ function Home() {
             </li>
             <li>
               <a
+                href="#passions"
+                className={activeSection === "passions" ? "active" : ""}
+              >
+                Mes passions.
+              </a>
+            </li>
+            <li>
+              <a
                 href="#experiences"
                 className={activeSection === "experiences" ? "active" : ""}
               >
@@ -209,6 +217,25 @@ function Home() {
             </p>
             <img src={photoLise} alt="Lise" id="photo_lise" />
           </div>
+        </section>
+        <div className="separator" />
+        <section id="passions">
+          <h2>Mes passions.</h2>
+          <p className="text_about">
+            J'aime le code mais pas que ! Mes passions pour mieux me connaître
+            et peut-être nous trouver un point commun ?
+          </p>
+          <ul>
+            <li>
+              Voyages 🌏 : Asie du Sud-est (2015, 2016, 2017, 2019) & Europe
+            </li>
+            <li>
+              Sports 🏋️‍♂️: bloc/escalade, musculation, course à pied,
+              yoga/Pilates…
+            </li>
+            <li>Société 🏘️: enjeux écologiques, sociaux, économiques...</li>
+            <li>Détente 🎉: Pop culture, séries, Memes, Geoguessr </li>
+          </ul>
         </section>
         <div className="separator" />
         <section id="experiences">
@@ -313,11 +340,11 @@ function Home() {
               <h3>Street Art Hunters</h3>
               <p className="technos">#HTML #CSS #React #NodeJS</p>
               <p>
-                Application de chasse aux oeuvres de streetart : partez à la
+                Application de chasse aux oeuvres de street art : partez à la
                 découverte des oeuvres de street art sur Lyon et ses alentours.
                 Si vous découvrez une oeuvre, ajoutez-la via un formulaire et
                 retrouvez-la sur la carte. Gagnez des points à chaque soumission
-                de photos et tentez d'être le premier contributeur
+                de photos et tentez d'être le contributeur n°1 !
               </p>
               <br />
               <a
@@ -344,9 +371,9 @@ function Home() {
                 Site de référencement de brasseries : vous partez en vacances en
                 Europe et vous avez soif ? Parcourez la carte interactive de
                 Wild beers et découvrez les brasseries autour de vous. Vous
-                aimez une brasserie ? Mettez-la en favoris et retrouvez toutes
-                ces infos. Vous pouvez filtrer les brasseries par pays, région
-                et même ville.
+                aimez une brasserie ? Mettez-la en favoris et retrouvez ses
+                infos. Vous pouvez filtrer les brasseries par pays, région et
+                même ville.
               </p>
               <br />
               <a
