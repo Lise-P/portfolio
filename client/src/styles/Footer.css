@@ -20,6 +20,8 @@
   height: auto;
   filter: invert(1);
   transition: filter 0.3s ease-in-out;
+  margin-right: 0;
+  border-radius: 0;
 }
 
 .footer .logos img:hover {
