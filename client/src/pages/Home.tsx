@@ -6,9 +6,12 @@ import "../styles/Home.css";
 import { Link } from "react-router-dom";
 import cv from "../assets/files/Lise Pérard - développeuse web.pdf";
 import github from "../assets/images/github_icon.svg";
-import labs from "../assets/images/labs.png";
+import grimpette from "../assets/images/grimpette.jpg";
+import labs from "../assets/images/labs.jpg";
 import navigLogo from "../assets/images/location.png";
-import perilovers from "../assets/images/perilovers.png";
+import perilovers from "../assets/images/perilovers.jpg";
+import pixinthecity from "../assets/images/pixinthecity.jpg";
+import wildbeers from "../assets/images/wildbeers.jpg";
 import writingNotes from "../assets/images/writing_note.png";
 
 interface Poste {
@@ -303,7 +306,7 @@ function Home() {
         <section id="projets">
           <h2>Projets.</h2>
           <p className="text_about">
-            Retrouvez ici mes projets codés avec amour et beaucoup de café ☕
+            Retrouvez ici mes projets codés avec amour et beaucoup de café ☕.
           </p>
           <div className="projet_container">
             <div className="projets">
@@ -326,7 +329,11 @@ function Home() {
               </a>
             </div>
             <div>
-              <img src={labs} alt="labs society" className="extrait_site" />
+              <img
+                src={pixinthecity}
+                alt="pix in the city"
+                className="extrait_site"
+              />
             </div>
           </div>
           <div className="projet_container">
@@ -351,7 +358,7 @@ function Home() {
               </a>
             </div>
             <div>
-              <img src={labs} alt="labs society" className="extrait_site" />
+              <img src={wildbeers} alt="wild beers" className="extrait_site" />
             </div>
           </div>
           <div className="projet_container">
@@ -376,7 +383,7 @@ function Home() {
               </a>
             </div>
             <div>
-              <img src={labs} alt="labs society" className="extrait_site" />
+              <img src={grimpette} alt="grimpette" className="extrait_site" />
             </div>
           </div>
           <div className="projet_container">
