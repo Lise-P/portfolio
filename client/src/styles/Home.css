@@ -232,9 +232,13 @@ figure {
 }
 
 .experience-card {
-  width: 80%;
-  max-width: 600px;
-  margin: 1.5em auto;
+  flex: 1; /* Prend toute la place disponible */
+  min-width: 300px; /* Taille minimale pour éviter que ça devienne trop petit */
+  max-width: 400px; /* Taille max pour éviter des cards trop grandes */
+  height: 100%; /* Pour rendre toutes les cartes de même hauteur */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Équilibre le contenu */
   padding: 1.5em;
   background-color: #f4f4f4;
   border-radius: 8px;
@@ -242,6 +246,14 @@ figure {
   text-align: justify;
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s
     ease;
+}
+
+.experience-card p {
+  flex-grow: 1; /* Permet au texte de remplir l'espace */
+}
+
+.experience-card .delete-btn {
+  align-self: center; /* Centre le bouton de suppression */
 }
 
 .experience-card:hover {
@@ -286,13 +298,23 @@ figure {
 .extrait_site {
   border-radius: 0;
   box-shadow: 0;
-  width: 18em;
-  height: auto;
+  width: 24em;
   border: 4px solid #41b3a3; /* Contour avec la couleur définie */
   border-radius: 15px; /* Coins arrondis */
   box-shadow: 0 0 15px rgba(65, 179, 163, 0.5); /* Ombre subtile autour de l'image */
   padding: 5px; /* Un peu d'espace entre l'image et le contour */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animations au hover */
+
+  flex: 1; /* Prend toute la place disponible */
+  max-width: 100%; /* S'adapte au conteneur */
+  height: 100%; /* Prend toute la hauteur disponible */
+  object-fit: cover; /* Remplit l'espace sans distorsion */
+}
+
+.projet_container > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .extrait_site:hover {
@@ -305,6 +327,7 @@ figure {
   flex-direction: column-reverse;
   align-content: center;
   align-items: center;
+  margin-top: 1em;
 }
 
 .delete-btn:hover {
@@ -312,16 +335,16 @@ figure {
 }
 
 .technos {
-  width: 55%;
-  padding: 0.35em;
+  display: inline-block; /* Adapte la largeur à la phrase */
+  padding: 0.35em 1em; /* Ajoute un peu d'espace autour du texte */
   background-color: #142850;
   color: white;
-  border: none;
   border-radius: 30px;
   font-size: 0.90em;
   text-align: center;
-  padding-left: 1em;
+  white-space: nowrap; /* Empêche le retour à la ligne */
 }
+
 .github-logo {
   width: 40px; /* Taille du logo, ajustable */
   height: auto; /* Garde les proportions de l'image */
@@ -341,6 +364,11 @@ figure {
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
+  flex: 1; /* Prend toute la place disponible */
+  min-height: 300px; /* Hauteur minimale pour harmoniser les cartes */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Permet d'équilibrer les éléments */
 }
 
 .projets:hover {
@@ -428,21 +456,24 @@ figure {
     width: 80%;
   }
 
-  .experience-card {
-    width: calc(50% - 1.5rem);
-  }
-
   .cards_xp {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center; /* Centre les cards */
+    gap: 1.5em; /* Espacement entre les cards */
   }
-  .technos {
-    width: 32%;
+
+  .projet_container {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 2em;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
   }
 }
-.projet_container {
-  flex-direction: row;
-}
+
 @media (min-width: 1025px) {
   .nav2 {
     justify-content: center;
@@ -482,9 +513,6 @@ figure {
   }
   .experience-form {
     margin: 1em;
-  }
-  .technos {
-    width: 16%;
   }
 
   .extrait_site {
