@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import photoLise from "../assets/images/photo_lise.jpg";
+import photoLise from "../assets/images/photo_lise.webp";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import "../styles/Home.css";
