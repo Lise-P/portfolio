@@ -40,6 +40,38 @@ nav ul li a.active {
   font-weight: bold;
 }
 
+#passions ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  justify-content: center;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+}
+
+#passions ul li {
+  background: rgba(26, 188, 156, 0.2);
+  padding: 15px 20px;
+  border-radius: 25px;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  min-width: 250px;
+  flex-grow: 1;
+  flex-basis: calc(25% - 30px); /* 25% pour chaque élément, moins l'espace des gaps */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#passions ul li:hover {
+  background: #1abc9c;
+  color: white;
+  transform: translateY(-3px);
+}
+
 h2 {
   position: relative;
   display: inline-block;
@@ -352,8 +384,9 @@ figure {
   transition: transform 0.3s ease;
 }
 
-.github-logo:hover {
+.projets:hover .github-logo:hover {
   transform: scale(1.1);
+  filter: invert(1);
 }
 .projets {
   margin-left: 1em;
@@ -379,7 +412,8 @@ figure {
 
 .projets:hover h3,
 .projets:hover p,
-.projets:hover .technos {
+.projets:hover .technos,
+.projets:hover img {
   color: white;
 }
 
@@ -408,6 +442,7 @@ figure {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
   }
 
   .nav2 img {
@@ -417,6 +452,7 @@ figure {
   .nav2 {
     display: flex;
     align-items: center;
+    text-align: center;
   }
   .about_container {
     display: flex;
@@ -497,7 +533,7 @@ figure {
 
   .text_about {
     padding: 1em;
-    font-size: 1.4em;
+    font-size: 1.1em;
     padding-right: 2em;
   }
 
@@ -519,5 +555,25 @@ figure {
   .extrait_site {
     width: 28em;
     height: auto;
+    margin-left: 6em;
+  }
+
+  .projet_container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+    margin: 0 10%;
+    padding-top: 1em;
+    margin-left: 16em;
+  }
+
+  .projets,
+  .github-logo {
+    flex: 1;
+    margin-left: -3em;
+  }
+
+  .github-logo {
+    margin-left: 0;
   }
 }
