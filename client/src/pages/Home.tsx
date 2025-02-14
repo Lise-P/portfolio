@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import cv from "../assets/files/Lise Pérard - développeuse web.pdf";
 import github from "../assets/images/github_icon.svg";
 import grimpette from "../assets/images/grimpette.jpg";
+import hobby from "../assets/images/hobby.webp";
 import labs from "../assets/images/labs.jpg";
 import navigLogo from "../assets/images/location.png";
 import perilovers from "../assets/images/perilovers.jpg";
@@ -215,7 +216,7 @@ function Home() {
               numériques passent par une vision collaborative, intégrant à la
               fois les aspects humains et technologiques.
             </p>
-            <img src={photoLise} alt="Lise" id="photo_lise" />
+            <img src={photoLise} alt="Lise" className="photo_lise" />
           </div>
         </section>
         <div className="separator" />
@@ -225,17 +226,20 @@ function Home() {
             J'aime le code mais pas que ! Mes passions pour mieux me connaître
             et peut-être nous trouver un point commun ?
           </p>
-          <ul>
-            <li>
-              Voyages 🌏 : Asie du Sud-est (2015, 2016, 2017, 2019) & Europe
-            </li>
-            <li>
-              Sports 🏋️‍♂️: bloc/escalade, musculation, course à pied,
-              yoga/Pilates…
-            </li>
-            <li>Société 🏘️: enjeux écologiques, sociaux, économiques...</li>
-            <li>Détente 🎉: Pop culture, séries, Memes, Geoguessr </li>
-          </ul>
+          <div className="about_container">
+            <ul>
+              <li>
+                Voyages 🌏 : Asie du Sud-est (2015, 2016, 2017, 2019) & Europe
+              </li>
+              <li>
+                Sports 🏋️‍♂️: bloc/escalade, musculation, course à pied,
+                yoga/Pilates…
+              </li>
+              <li>Société 🏘️: enjeux écologiques, sociaux, économiques...</li>
+              <li>Détente 🎉: Pop culture, séries, Memes, Geoguessr </li>
+            </ul>
+            <img src={hobby} alt="hobby" className="photo_lise" />
+          </div>
         </section>
         <div className="separator" />
         <section id="experiences">
