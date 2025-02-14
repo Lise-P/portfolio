@@ -113,36 +113,36 @@ img:hover {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 .styled-link {
-  text-decoration: none; /* Enlève le souligné par défaut */
-  color: #1abc9c; /* Couleur du texte */
-  font-weight: bold; /* Texte en gras */
-  font-size: 16px; /* Taille de la police */
-  border-radius: 5px; /* Coins arrondis */
-  position: relative; /* Pour positionner le pseudo-élément */
-  overflow: hidden; /* Nécessaire pour cacher la partie du surlignement qui dépasse */
+  text-decoration: none;
+  color: #1abc9c;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
   font-size: 1.1em;
 }
 
 .styled-link::before {
-  content: ""; /* Crée un pseudo-élément avant le texte */
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%; /* Le surlignement couvrira toute la largeur du lien */
-  height: 2px; /* Hauteur du surlignement */
-  background-color: #1abc9c; /* Couleur du surlignement */
-  transform: scaleX(0); /* On commence avec le surlignement "caché" */
-  transform-origin: bottom right; /* Point de départ du surlignement */
-  transition: transform 0.3s ease-out; /* Transition fluide pour l'animation */
+  width: 100%;
+  height: 2px;
+  background-color: #1abc9c;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
 }
 
 .styled-link:hover::before {
-  transform: scaleX(1); /* Au survol, on "déploie" le surlignement */
-  transform-origin: bottom left; /* Le surlignement s'étend de gauche à droite */
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .styled-link:hover {
-  color: #000000; /* Couleur du texte au survol */
+  color: #000000;
 }
 
 #photo_lise {
@@ -232,13 +232,13 @@ figure {
 }
 
 .experience-card {
-  flex: 1; /* Prend toute la place disponible */
-  min-width: 300px; /* Taille minimale pour éviter que ça devienne trop petit */
-  max-width: 400px; /* Taille max pour éviter des cards trop grandes */
-  height: 100%; /* Pour rendre toutes les cartes de même hauteur */
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Équilibre le contenu */
+  justify-content: space-between;
   padding: 1.5em;
   background-color: #f4f4f4;
   border-radius: 8px;
@@ -249,11 +249,11 @@ figure {
 }
 
 .experience-card p {
-  flex-grow: 1; /* Permet au texte de remplir l'espace */
+  flex-grow: 1;
 }
 
 .experience-card .delete-btn {
-  align-self: center; /* Centre le bouton de suppression */
+  align-self: center;
 }
 
 .experience-card:hover {
@@ -299,16 +299,16 @@ figure {
   border-radius: 0;
   box-shadow: 0;
   width: 24em;
-  border: 4px solid #41b3a3; /* Contour avec la couleur définie */
-  border-radius: 15px; /* Coins arrondis */
-  box-shadow: 0 0 15px rgba(65, 179, 163, 0.5); /* Ombre subtile autour de l'image */
-  padding: 5px; /* Un peu d'espace entre l'image et le contour */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animations au hover */
+  border: 4px solid #41b3a3;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(65, 179, 163, 0.5);
+  padding: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  flex: 1; /* Prend toute la place disponible */
-  max-width: 100%; /* S'adapte au conteneur */
-  height: 100%; /* Prend toute la hauteur disponible */
-  object-fit: cover; /* Remplit l'espace sans distorsion */
+  flex: 1;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .projet_container > div {
@@ -318,8 +318,8 @@ figure {
 }
 
 .extrait_site:hover {
-  transform: scale(1.05); /* Effet de zoom au survol */
-  box-shadow: 0 0 30px rgba(65, 179, 163, 0.7); /* Ombre plus forte au hover */
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(65, 179, 163, 0.7);
 }
 
 .projet_container {
@@ -328,6 +328,7 @@ figure {
   align-content: center;
   align-items: center;
   margin-top: 1em;
+  padding-top: 1em;
 }
 
 .delete-btn:hover {
@@ -335,24 +336,24 @@ figure {
 }
 
 .technos {
-  display: inline-block; /* Adapte la largeur à la phrase */
-  padding: 0.35em 1em; /* Ajoute un peu d'espace autour du texte */
+  display: inline-block;
+  padding: 0.35em 1em;
   background-color: #142850;
   color: white;
   border-radius: 30px;
   font-size: 0.90em;
   text-align: center;
-  white-space: nowrap; /* Empêche le retour à la ligne */
+  white-space: nowrap;
 }
 
 .github-logo {
-  width: 40px; /* Taille du logo, ajustable */
-  height: auto; /* Garde les proportions de l'image */
-  transition: transform 0.3s ease; /* Animation au hover */
+  width: 40px;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
 .github-logo:hover {
-  transform: scale(1.1); /* Agrandissement du logo au survol */
+  transform: scale(1.1);
 }
 .projets {
   margin-left: 1em;
@@ -364,11 +365,11 @@ figure {
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
-  flex: 1; /* Prend toute la place disponible */
-  min-height: 300px; /* Hauteur minimale pour harmoniser les cartes */
+  flex: 1;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Permet d'équilibrer les éléments */
+  justify-content: space-between;
 }
 
 .projets:hover {
@@ -459,8 +460,8 @@ figure {
   .cards_xp {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center; /* Centre les cards */
-    gap: 1.5em; /* Espacement entre les cards */
+    justify-content: center;
+    gap: 1.5em;
   }
 
   .projet_container {
