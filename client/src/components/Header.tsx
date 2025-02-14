@@ -7,7 +7,10 @@ function Header() {
       <nav className="header">
         <img src={logolise} alt="logo_lise" id="logo_lise" />
         <p className="header-tagline">
-          Lise Pérard <br /> Développeuse web Full stack
+          Lise Pérard <br />
+          <span>
+            <em>Développeuse web Full stack</em>
+          </span>
         </p>
         <h1 className="title_header">
           <Link to="/">
