@@ -4,6 +4,9 @@ nav {
   padding: 10px 0;
 }
 
+.nav2 {
+  background-color: lightgrey;
+}
 nav ul {
   display: flex;
   flex-direction: column;
@@ -38,6 +41,24 @@ nav ul li a.active {
   background-color: #142850;
   color: white;
   font-weight: bold;
+}
+
+.logo_contact {
+  border-radius: 0;
+  box-shadow: none;
+  width: 3em;
+  height: 3em;
+}
+.logo_contact:hover {
+  box-shadow: none;
+}
+
+.contact_logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 1em;
+  gap: 2em;
 }
 
 #passions ul {
@@ -457,8 +478,23 @@ figure {
   .about_container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 
+  .logo_contact {
+    width: 4em;
+    height: 4em;
+  }
+  .logo_contact:hover {
+    box-shadow: none;
+  }
+
+  .contact_logos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 1em;
+  }
   section {
     background-color: white;
     padding: 2em;
@@ -537,6 +573,13 @@ figure {
     padding-right: 2em;
   }
 
+  .logo_contact {
+    height: 6em;
+    width: 6em;
+  }
+  .contact_logos {
+    flex-direction: row;
+  }
   h2 {
     font-size: 3em;
     padding-left: 0.5em;
