@@ -14,6 +14,9 @@ import perilovers from "../assets/images/perilovers.jpg";
 import pixinthecity from "../assets/images/pixinthecity.jpg";
 import wildbeers from "../assets/images/wildbeers.jpg";
 import writingNotes from "../assets/images/writing_note.png";
+import linkedin from "../assets/images/linkedinicon.svg";
+import mail from "../assets/images/mail.png";
+import contact from "../assets/images/contact.jpg";
 
 interface Poste {
   id: number;
@@ -194,7 +197,6 @@ function Home() {
             </li>
           </ul>
         </nav>
-        <div className="separator" />
         <section id="about">
           <h2>À propos. </h2>
           <div className="about_container">
@@ -219,7 +221,39 @@ function Home() {
             <img src={photoLise} alt="Lise" className="photo_lise" />
           </div>
         </section>
-        <div className="separator" />
+        <section>
+          <h2>Me contacter.</h2>
+          <p className="text_about">
+            Retrouvez-moi par mail, sur GitHub & LinkedIn.
+          </p>
+          <div className="about_container">
+            <div className="contact_logos">
+              <a href="mailto:tonemail@example.com">
+                <img
+                  src={mail}
+                  alt="Envoyer un mail"
+                  className="logo_contact"
+                />
+              </a>
+
+              <a
+                href="https://github.com/Lise-P"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={github} alt="GitHub" className="logo_contact" />
+              </a>
+              <a
+                href="https://linkedin.com/in/lise-perard"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={linkedin} alt="LinkedIn" className="logo_contact" />
+              </a>
+            </div>
+            <img src={contact} alt="logo contact" className="photo_lise" />
+          </div>
+        </section>
         <section id="passions">
           <h2>Mes passions.</h2>
           <p className="text_about">
@@ -228,20 +262,14 @@ function Home() {
           </p>
           <div className="about_container">
             <ul>
-              <li>
-                Voyages 🌏 : Asie du Sud-est (2015, 2016, 2017, 2019) & Europe
-              </li>
-              <li>
-                Sports 🏋️‍♂️: bloc/escalade, musculation, course à pied,
-                yoga/Pilates…
-              </li>
-              <li>Société 🏘️: enjeux écologiques, sociaux, économiques...</li>
+              <li>Voyages 🌏 : Asie du Sud-est & Europe</li>
+              <li>Sports 🏋️‍♂️: bloc, musculation, course à pied, yoga…</li>
+              <li>Société 🏘️: enjeux écologiques, socio-économiques...</li>
               <li>Détente 🎉: Pop culture, séries, Memes, Geoguessr </li>
             </ul>
             <img src={hobby} alt="hobby" className="photo_lise" />
           </div>
         </section>
-        <div className="separator" />
         <section id="experiences">
           <h2>Ajouter une expérience.</h2>
           <div className="xp_container">
@@ -288,7 +316,6 @@ function Home() {
             </form>
           </div>
         </section>
-        <div className="separator" />
         <section id="figure_xp">
           <h2>Liste des expériences.</h2>
           <p className="text_about">
@@ -333,7 +360,6 @@ function Home() {
             )}
           </div>
         </section>
-        <div className="separator" />
         <section id="projets">
           <h2>Projets.</h2>
           <p className="text_about">
