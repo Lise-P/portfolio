@@ -16,10 +16,6 @@ function Header() {
           <Link to="/">
             <span>Home.</span>
           </Link>
-
-          <Link to="/Login">
-            <span>Se connecter.</span>
-          </Link>
         </h1>
         {/* Affichage mobile/tablette */}
         <input id="toggle" type="checkbox" />
@@ -34,7 +30,6 @@ function Header() {
             <nav className="nav_header">
               <Link to="/">Home.</Link>
               <br />
-              <Link to="/Login">Se connecter.</Link>
             </nav>
           </div>
         </div>
