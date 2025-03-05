@@ -484,6 +484,7 @@ figure {
   .logo_contact {
     width: 4em;
     height: 4em;
+    object-fit: fill;
   }
   .logo_contact:hover {
     box-shadow: none;

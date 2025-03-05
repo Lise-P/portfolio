@@ -88,16 +88,6 @@ nav a {
   letter-spacing: 1px;
 }
 
-nav a:before {
-  content: "";
-  height: 0;
-  position: absolute;
-  width: 0.25em;
-  background-color: white;
-  left: -0.5em;
-  transition: all 0.2s ease-in-out;
-}
-
 nav a:hover {
   color: white;
 }
