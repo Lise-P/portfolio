@@ -289,7 +289,7 @@ function Home() {
 								rencontrez d'autres grimpeurs et grimpeuses de la région et
 								retrouvez-vous à la salle de blocs pour grimper ensemble.
 								Indiquez vos horaires et vos salles préférées. Retrouvez aussi
-								des articles et des événements autour du bloc.
+								des articles et des événements autour du bloc. - EN COURS - 
 							</p>
 							<br />
 							<a
