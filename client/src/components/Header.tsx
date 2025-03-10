@@ -17,13 +17,6 @@ function Header() {
             <span>Home.</span>
           </Link>
         </h1>
-        {/* Affichage mobile/tablette */}
-        <input id="toggle" type="checkbox" />
-        <label htmlFor="toggle" className="hamburger">
-          <div className="top-bun" />
-          <div className="meat" />
-          <div className="bottom-bun" />
-        </label>
         {/* Menu qui prend un tiers de l'écran */}
         <div className="nav">
           <div className="nav-wrapper">

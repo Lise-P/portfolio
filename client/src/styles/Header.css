@@ -18,10 +18,7 @@
   margin-left: 2em;
 }
 
-/* Phrase d'accroche cachée par défaut (mobile) */
-.header-tagline {
-  display: none; /* Cacher sur mobile par défaut */
-}
+
 
 /* Liens cachés aussi par défaut */
 .title_header {
