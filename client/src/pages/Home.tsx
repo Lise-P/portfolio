@@ -307,13 +307,13 @@ function Home() {
           <div className="projet_container">
             <div className="projets">
               <h3>Périlovers</h3>
-              <p className="technos">#HTML #CSS #React #NodeJS</p>
+              <p className="technos">#HTML #CSS #React #Express</p>
               <p>
-                Site de rencontre pour les amoureux du Périgore - design années
+                Site de rencontre pour les amoureux du Périgord - design années
                 2000. Envie de (re)découvrir cette magnifique région ? Alors
                 Périlovers a ce qu'il vous faut ! Retrouvez plein d'événements
                 et des gens avec qui dialoguer pour aller au musée de la
-                charantaise ensemble.
+                charentaise ensemble.
               </p>
               <br />
               <a
