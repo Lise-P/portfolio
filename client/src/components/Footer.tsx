@@ -22,7 +22,7 @@ function Footer() {
         </a>
       </div>
       <div className="copyright">
-        <p>Tous droits réservés - Lise Pérard</p>
+        <p>Images : freepik.com - Lise Pérard</p>
       </div>
     </footer>
   );
